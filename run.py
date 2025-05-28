@@ -4,7 +4,7 @@ def initialize_database():
     conn = get_connection()
     cursor = conn.cursor()
     with open("app/schema.sql", "r") as f:
-        cursor.executescrippt(f.read())
+        cursor.executescript(f.read())
     conn.commit()
     conn.close()
     print("Database and tables created")
