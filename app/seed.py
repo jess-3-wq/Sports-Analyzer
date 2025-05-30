@@ -14,6 +14,7 @@ teams = [
 
 print("Top teams....")
 for name, league in teams:
+       print(f"Inserting team: {name}, league: {league}")
     Team.create(name, league)
 
 from app.connection import get_connection
@@ -44,6 +45,7 @@ players = [
 ]
 
 for name, position, team_id in players:
+       print(f"Inserting player: {name}, team_id: {team_id}")
     Player.create(name, position, team_id)
 
 def get_player_id_by_name(name): 
@@ -69,6 +71,7 @@ youngsters = [
 ]
 
 for name, academy, player_id, team_id in youngsters:
+       print(f"Inserting youngster: {name},player_id:{player_id} team_id: {team_id}")
     Youngster.create(name, academy, player_id, team_id)
 
 print("Teams are complete")    
